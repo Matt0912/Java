@@ -4,8 +4,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.Random;
 
-
-
 public class Game extends Canvas implements Runnable {
 
     private static final long serialVersionUID = 6221414150021413828L;
@@ -18,20 +16,28 @@ public class Game extends Canvas implements Runnable {
     private HUD hud;
     private Handler handler;
     private Random r;
+    private Spawn spawner;
+    private Menu menu;
+
+    public enum STATE {
+        StartMenu,
+        PauseMenu,
+        Game
+    };
+
+    public STATE gameState = STATE.StartMenu;
 
     public Game() {
         handler = new Handler();
-        this.addKeyListener(new KeyInput(handler));
+        menu = new Menu(this, handler);
+        this.addKeyListener(new KeyInput(this, handler));
+        this.addMouseListener(menu);
 
         new Window(WIDTH, HEIGHT, "Game Test 1", this);
 
         hud = new HUD();
+        spawner = new Spawn(handler, hud);
         r = new Random();
-
-        handler.addObject(new Player(WIDTH/2-50,HEIGHT/2-50, ID.Player, handler));
-        for (int i = 0; i < 5; i++) {
-            handler.addObject(new BasicEnemy(r.nextInt(WIDTH - 60),r.nextInt(HEIGHT/2), ID.BasicEnemy, handler));
-        }
 
     }
 
@@ -81,8 +87,15 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void tick() {
-        handler.tick();
-        hud.tick();
+        if (gameState == STATE.Game) {
+            handler.tick();
+            hud.tick();
+            spawner.tick();
+        }
+        else if (gameState == STATE.StartMenu || gameState == STATE.PauseMenu) {
+            menu.tick();
+        }
+
     }
 
     private void render() {
@@ -98,8 +111,16 @@ public class Game extends Canvas implements Runnable {
         g.drawRect(0, 0, WIDTH-17, HEIGHT-40);
 
         handler.render(g);
-        hud.render(g);
 
+        if (gameState == STATE.Game) {
+            hud.render(g);
+        }
+        else if (gameState == STATE.StartMenu) {
+            menu.renderStart(g);
+        }
+        else if (gameState == STATE.PauseMenu) {
+            menu.renderPause(g);
+        }
         g.dispose();
         bs.show();
     }
