@@ -52,4 +52,8 @@ public class HUD {
         return level;
     }
 
+    public int getHEALTH() {
+        return HEALTH;
+    }
+
 }

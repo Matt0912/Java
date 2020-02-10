@@ -6,10 +6,12 @@ import java.awt.Rectangle;
 public class Player extends GameObject {
     protected int playerWidth = 50, playerHeight = 50;
     Handler handler;
+    private Game game;
 
-    public Player(int x, int y, ID id, Handler handler) {
+    public Player(int x, int y, ID id, Handler handler, Game game) {
         super(x, y, id);
         this.handler = handler;
+        this.game = game;
 
     }
 
@@ -35,9 +37,13 @@ public class Player extends GameObject {
             if (tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy) {
                 if (getBounds().intersects(tempObject.getBounds())) {
                     //Collision code
-                    HUD.HEALTH -= 2;
+                    //HUD.HEALTH -= 2;
+                    if (HUD.getHealth() <= 100) {
+                        game.gameState = Game.STATE.EndMenu;
+                    }
                 }
             }
+
         }
     }
 

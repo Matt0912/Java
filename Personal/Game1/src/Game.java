@@ -22,6 +22,7 @@ public class Game extends Canvas implements Runnable {
     public enum STATE {
         StartMenu,
         PauseMenu,
+        EndMenu,
         Game
     };
 
@@ -79,7 +80,7 @@ public class Game extends Canvas implements Runnable {
 
             if(System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                System.out.println("FPS: "+ frames);
+                //System.out.println("FPS: "+ frames);
                 frames = 0;
             }
         }
@@ -92,7 +93,7 @@ public class Game extends Canvas implements Runnable {
             hud.tick();
             spawner.tick();
         }
-        else if (gameState == STATE.StartMenu || gameState == STATE.PauseMenu) {
+        else if (gameState == STATE.StartMenu || gameState == STATE.PauseMenu || gameState == STATE.EndMenu) {
             menu.tick();
         }
 
@@ -120,6 +121,9 @@ public class Game extends Canvas implements Runnable {
         }
         else if (gameState == STATE.PauseMenu) {
             menu.renderPause(g);
+        }
+        else if (gameState == STATE.EndMenu) {
+            menu.renderEnd(g);
         }
         g.dispose();
         bs.show();
