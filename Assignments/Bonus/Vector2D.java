@@ -1,8 +1,31 @@
 import java.lang.Math;
+import java.util.Scanner;
+import java.util.*;
+
 
 public class Vector2D {
     private double x;
     private double y;
+    protected static int numVectors = 0;
+    static Scanner userInput = new Scanner(System.in);
+
+    // Input = true if taking user input, Input = false if taking other input
+    public Vector2D(boolean input) {
+        numVectors++;
+        if (input == true) {
+            System.out.println("Enter x,y co-ordinates for vector " + numVectors + ": ");
+            try {
+                storeVector(userInput.nextDouble(), userInput.nextDouble());
+            } catch (Exception e) {
+                System.out.println("This doesn't appear to be a number?");
+                System.exit(0);
+            }
+            System.out.println("x = " + this.x + ", y = " + this.y);
+        }
+        else {
+            storeVector(0,0);
+        }
+    }
 
     public void storeVector(double x, double y) {
         this.x = x;
@@ -17,34 +40,35 @@ public class Vector2D {
     }
 
     Vector2D add(Vector2D v) {
-        this.x = this.x + v.x;
-        this.y = this.y + v.y;
+        Vector2D vector1 = new Vector2D(false);
+        vector1.x = this.x + v.x;
+        vector1.y = this.y + v.y;
 
-        return this;
-
+        return vector1;
     }
 
     Vector2D scale(double f) {
-        this.x = this.x * f;
-        this.y = this.y * f;
+        Vector2D vector1 = new Vector2D(false);
+        vector1.x = this.x * f;
+        vector1.y = this.y * f;
 
-        return this;
+        return vector1;
+    }
 
+    public String toString() {
+        return "Vector2D: (" + this.x + ", " + this.y + ")";
     }
 
     public static void main(String[] args) {
-        Vector2D vector1 = new Vector2D();
-        Vector2D vector2 = new Vector2D();
-
-        vector1.storeVector(3, 3);
-        vector2.storeVector(5, 6);
+        Vector2D vector1 = new Vector2D(true);
+        Vector2D vector2 = new Vector2D(true);
         double scaleFactor = 3;
 
         System.out.println("Distance = " + vector1.distance(vector2));
-        vector1 = vector1.add(vector2);
-        System.out.println("Sum = " + vector1.x + ", " + vector1.y);
+        System.out.println("Sum = " + vector1.add(vector2).toString());
         System.out.println("Vector 1 scaled by " + scaleFactor +
-                            " = " + vector1.scale(scaleFactor));
+                            " = " + vector1.scale(scaleFactor).toString());
+        System.out.println("Vector 1 = " + vector1.toString());
 
 
     }

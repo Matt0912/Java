@@ -27,7 +27,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Game1/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Assignments/Bonus" />
   </component>
   <component name="RunManager">
     <configuration name="Animal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -57,30 +57,36 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1155" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1581375316195">
-      <screen x="-1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="-1155" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375316195" />
-    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1581427352456">
+    <state x="765" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1581450520814">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="-1155" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375316195" />
+    <state x="765" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450520814" />
+    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1581450710247">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450710247" />
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1581427352456" />
-    <state width="1876" height="223" key="GridCell.Tab.0.bottom" timestamp="1581375570336">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1876" height="192" key="GridCell.Tab.0.bottom" timestamp="1581450711705">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375570336" />
-    <state width="1876" height="223" key="GridCell.Tab.0.center" timestamp="1581375570336">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1876" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450711705" />
+    <state width="1876" height="192" key="GridCell.Tab.0.center" timestamp="1581450711705">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="223" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375570336" />
-    <state width="1876" height="223" key="GridCell.Tab.0.left" timestamp="1581375570335">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1876" height="192" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450711705" />
+    <state width="1876" height="192" key="GridCell.Tab.0.left" timestamp="1581450711705">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="223" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375570335" />
-    <state width="1876" height="223" key="GridCell.Tab.0.right" timestamp="1581375570336">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1876" height="192" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450711705" />
+    <state width="1876" height="192" key="GridCell.Tab.0.right" timestamp="1581450711705">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="223" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581375570336" />
+    <state width="1876" height="192" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581450711705" />
     <state x="656" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1581427325824">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
