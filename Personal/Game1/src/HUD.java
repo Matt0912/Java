@@ -36,6 +36,14 @@ public class HUD {
 
     }
 
+    public void reset() {
+        HEALTH = 100;
+        this.greenValue = 200;
+        this.redValue = 0;
+        this.score = 0;
+        this.level = 1;
+    }
+
     public void setScore(int score) {
         this.score = score;
     }
@@ -50,10 +58,6 @@ public class HUD {
 
     public int getLevel() {
         return level;
-    }
-
-    public int getHEALTH() {
-        return HEALTH;
     }
 
 }

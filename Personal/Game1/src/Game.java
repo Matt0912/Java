@@ -30,7 +30,7 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
         handler = new Handler();
-        menu = new Menu(this, handler);
+        menu = new Menu(this, handler, hud);
         this.addKeyListener(new KeyInput(this, handler));
         this.addMouseListener(menu);
 
@@ -39,6 +39,12 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
         spawner = new Spawn(handler, hud);
         r = new Random();
+
+        if (gameState == STATE.StartMenu) {
+            for (int i = 0; i < 10; i++) {
+                handler.addObject(new MenuEffect(r.nextInt(WIDTH - 60), r.nextInt(HEIGHT/2), ID.MenuEffect, handler));
+            }
+        }
 
     }
 
@@ -93,8 +99,12 @@ public class Game extends Canvas implements Runnable {
             hud.tick();
             spawner.tick();
         }
-        else if (gameState == STATE.StartMenu || gameState == STATE.PauseMenu || gameState == STATE.EndMenu) {
+        else if (gameState == STATE.PauseMenu || gameState == STATE.EndMenu) {
             menu.tick();
+        }
+        else if (gameState == STATE.StartMenu) {
+            menu.tick();
+            handler.tick();
         }
 
     }

@@ -28,6 +28,7 @@ public class Player extends GameObject {
 
         collision();
 
+
     }
 
     private void collision() {
@@ -37,8 +38,8 @@ public class Player extends GameObject {
             if (tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy) {
                 if (getBounds().intersects(tempObject.getBounds())) {
                     //Collision code
-                    //HUD.HEALTH -= 2;
-                    if (HUD.getHealth() <= 100) {
+                    HUD.HEALTH -= 2;
+                    if (HUD.HEALTH <= 0) {
                         game.gameState = Game.STATE.EndMenu;
                     }
                 }

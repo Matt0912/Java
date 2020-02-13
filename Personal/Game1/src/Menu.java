@@ -9,11 +9,13 @@ public class Menu extends MouseAdapter{
 
     private Game game;
     private Handler handler;
+    private HUD hud;
     private Random r = new Random();
 
-    public Menu(Game game, Handler handler) {
+    public Menu(Game game, Handler handler, HUD hud) {
         this.game = game;
         this.handler = handler;
+        this.hud = hud;
     }
 
     public void mousePressed(MouseEvent e) {
@@ -32,6 +34,9 @@ public class Menu extends MouseAdapter{
                 // Play Button
                 if (mouseOver(mx, my, Game.WIDTH/2-120, 150, 200, 64)) {
                     game.gameState = Game.STATE.Game;
+                    for (int i = 0; i < handler.object.size(); i++) {
+                        handler.removeAll();
+                    }
                     handler.addObject(new Player(Game.WIDTH/2-50, Game. HEIGHT/2-50, ID.Player, handler, game));
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 60),r.nextInt(Game.HEIGHT/2), ID.BasicEnemy, handler));
                 }
@@ -47,11 +52,12 @@ public class Menu extends MouseAdapter{
                 // Play Again Button
                 if (mouseOver(mx, my, Game.WIDTH/2-120, 150, 200, 64)) {
                     for (int i = 0; i < handler.object.size(); i++) {
-                        handler.removeObject(handler.object.get(i));
+                        handler.removeAll();
                     }
                     handler.addObject(new Player(Game.WIDTH/2-50, Game. HEIGHT/2-50, ID.Player, handler, game));
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 60),r.nextInt(Game.HEIGHT/2), ID.BasicEnemy, handler));
                     game.gameState = Game.STATE.Game;
+                    hud.setScore(0);
                 }
             }
 
