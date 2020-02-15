@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41c60bf4-50ac-43cd-8d17-0a8c31e8e8aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Game1/src/MenuEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game1/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game1/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/HUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/HUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/HUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/ID.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/ID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game1/src/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game1/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game1/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game1/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +26,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignments" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignments/03 Oxo" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
@@ -57,11 +47,11 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1112" y="415" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581374681522" />
-    <state x="739" y="267" key="FileChooserDialogImpl" timestamp="1581427550128">
+    <state x="739" y="267" key="FileChooserDialogImpl" timestamp="1581619480663">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1181" y="267" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1581374780805" />
-    <state x="739" y="267" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1581427550128" />
+    <state x="739" y="267" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1581619480663" />
     <state x="461" y="168" key="SettingsEditor" timestamp="1581597779534">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

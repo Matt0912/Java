@@ -34,9 +34,7 @@ public class Menu extends MouseAdapter{
                 // Play Button
                 if (mouseOver(mx, my, Game.WIDTH/2-120, 150, 200, 64)) {
                     game.gameState = Game.STATE.Game;
-                    for (int i = 0; i < handler.object.size(); i++) {
-                        handler.removeAll();
-                    }
+                    handler.removeAll();
                     handler.addObject(new Player(Game.WIDTH/2-50, Game. HEIGHT/2-50, ID.Player, handler, game));
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 60),r.nextInt(Game.HEIGHT/2), ID.BasicEnemy, handler));
                 }
@@ -51,16 +49,13 @@ public class Menu extends MouseAdapter{
             if (game.gameState == Game.STATE.EndMenu) {
                 // Play Again Button
                 if (mouseOver(mx, my, Game.WIDTH/2-120, 150, 200, 64)) {
-                    for (int i = 0; i < handler.object.size(); i++) {
-                        handler.removeAll();
-                    }
+                    handler.removeAll();
                     handler.addObject(new Player(Game.WIDTH/2-50, Game. HEIGHT/2-50, ID.Player, handler, game));
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 60),r.nextInt(Game.HEIGHT/2), ID.BasicEnemy, handler));
                     game.gameState = Game.STATE.Game;
-                    hud.setScore(0);
+                    hud.reset();
                 }
             }
-
         }
 
 
