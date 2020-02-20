@@ -43,7 +43,7 @@ public class OXOView extends Application implements EventHandler<ActionEvent>
         Scene scene = new Scene(contentPane);
         stage.setScene(scene);
         stage.show();
-        OXOModel gameModel = new OXOModel(4,4,4,this);
+        OXOModel gameModel = new OXOModel(5,5,3,this);
         gameModel.addPlayer(new OXOPlayer('X'));
         gameModel.addPlayer(new OXOPlayer('O'));
         controller = new OXOController(gameModel);

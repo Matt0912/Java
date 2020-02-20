@@ -4,6 +4,7 @@ class OXOController
     private int turns = 0;
     private int numRows;
     private int numCols;
+    private int winThreshold;
 
     public OXOController(OXOModel model)
     {
@@ -11,6 +12,7 @@ class OXOController
         model.setCurrentPlayer(model.getPlayerByNumber(0));
         numRows = model.getNumberOfRows();
         numCols = model.getNumberOfColumns();
+        winThreshold = model.getWinThreshold();
 
     }
 
@@ -21,89 +23,115 @@ class OXOController
         if (command.length() == 2) {
             int x = command.toLowerCase().charAt(0) - 'a';
             int y = command.charAt(1) - '0' - 1;
-            if (checkValidInput(command, x, y)) {
+            if (checkValidInput(x, y)) {
                 turns++;
                 model.setCellOwner(x, y, model.getCurrentPlayer());
-                model.setCurrentPlayer(model.getPlayerByNumber(turns % model.getNumberOfPlayers()));
-
                 checkWinConditions();
+                // Change player after checking win conditions
+                model.setCurrentPlayer(model.getPlayerByNumber(turns % model.getNumberOfPlayers()));
             }
         }
         else {
-            System.out.println(new InvalidCellIdentifierException("length of input", command).toString());
+            throw new InvalidCellIdentifierException("length of input", command);
         }
     }
 
-    public boolean checkValidInput(String input, int x, int y) {
-        if (x < 0 ||  x > numCols - 1 || y < 0 ||  y > numRows - 1) {
-            System.out.println(new CellDoesNotExistException(x,y).toString());
+    public boolean checkValidInput(int x, int y) throws CellAlreadyTakenException, CellDoesNotExistException {
+        if (!checkBounds(x, y)) {
+            throw new CellDoesNotExistException(x,y);
         }
         else if (model.getCellOwner(x,y) != null) {
-            System.out.println(new CellAlreadyTakenException(x,y).toString());
+            throw new CellAlreadyTakenException(x,y);
         }
         else {
             return true;
         }
-        return false;
     }
 
+    //Returns true if co-ordinate is within bounds, false if not
+    private boolean checkBounds(int x, int y) {
+        return (x >= 0 && x < numCols) && (y >= 0 && y < numRows);
+    }
+
+    // Win conditions designed for any win threshold for any n x n grid up to 9 x 9
     public void checkWinConditions() {
-        OXOPlayer currOwner;
-        int i, j;
+        OXOPlayer currPlayer = model.getCurrentPlayer();
+        int i, j, lineSum;
         // Check for win in columns
         for (i = 0; i < numCols; i++) {
-            currOwner = model.getCellOwner(0, i);
-            j = 1;
-            while (currOwner == model.getCellOwner(j, i)) {
-                if (j == numRows - 1) {
-                    model.setWinner(currOwner);
+            lineSum = 0;
+            for (j = 0; j < numRows; j++) {
+                if (model.getCellOwner(j, i) == currPlayer) {
+                    lineSum++;
+                }
+                else {
+                    lineSum = 0;
+                }
+                if (lineSum == winThreshold) {
+                    model.setWinner(currPlayer);
                     return;
                 }
-                j++;
             }
         }
 
         // Check for win in rows
         for (i = 0; i < numRows; i++) {
-            currOwner = model.getCellOwner(i, 0);
-            j = 1;
-            while (currOwner == model.getCellOwner(i, j)) {
-                if (j == numCols - 1) {
-                    model.setWinner(currOwner);
+            lineSum = 0;
+            for (j = 0; j < numCols; j++) {
+                if (model.getCellOwner(i, j) == currPlayer) {
+                    lineSum++;
+                }
+                else {
+                    lineSum = 0;
+                }
+                if (lineSum == winThreshold) {
+                    model.setWinner(currPlayer);
                     return;
                 }
-                j++;
             }
         }
 
-        // Check for diagonal wins
-        currOwner = model.getCellOwner(0, numCols - 1);
-        i = 1;
-        j = numCols - 1 - i;
-        while (currOwner == model.getCellOwner(i, j)) {
-            if (j == 0) {
-                model.setWinner(currOwner);
-                return;
-            }
-            i++;
-            j--;
-        }
-        currOwner = model.getCellOwner(0, 0);
-        i = 1;
-        j = 1;
-        while (currOwner == model.getCellOwner(i, j)) {
-            if (j == numCols - 1) {
-                model.setWinner(currOwner);
-                return;
-            }
-            i++;
-            j++;
+        if (checkDiagonals(-1) || checkDiagonals(1)) {
+            model.setWinner(currPlayer);
+            return;
         }
 
         if (turns == numRows*numCols) {
             model.setGameDrawn();
         }
 
+    }
+
+    //Multiplier ( -1 or 1) determines which direction to check: -1 = i increasing, j decreasing
+    //                                                            1 = i increasing, j increasing
+    public boolean checkDiagonals(int multiplier) {
+        int lineSum = 1;
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                if (model.getCellOwner(i, j) == model.getCurrentPlayer()) {
+                    lineSum = 0;
+                    boolean checked = false;
+                    while (!checked) {
+                        if (checkBounds(i + lineSum, j + (lineSum * multiplier))) {
+                            if (model.getCellOwner(i + lineSum,
+                                    j + (lineSum * multiplier)) == model.getCurrentPlayer()) {
+                                lineSum++;
+                            }
+                            else {
+                                checked = true;
+                            }
+                            if (lineSum == winThreshold) {
+                                return true;
+                            }
+                        }
+                        else {
+                            checked = true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }

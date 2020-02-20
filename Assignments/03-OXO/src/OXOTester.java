@@ -11,4 +11,5 @@ public class OXOTester {
             System.out.println("You MUST run java with assertions enabled (-ea) to test your program !");
         }
     }
+
 }
