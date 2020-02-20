@@ -13,6 +13,10 @@ class OXOController
         numRows = model.getNumberOfRows();
         numCols = model.getNumberOfColumns();
         winThreshold = model.getWinThreshold();
+        if (winThreshold > numRows && winThreshold > numCols) {
+            System.out.println("INVALID WIN THRESHOLD (" + winThreshold + "): Threshold is larger than the grid size");
+            System.exit(0);
+        }
     }
 
     public void handleIncomingCommand(String command) throws InvalidCellIdentifierException, CellAlreadyTakenException, CellDoesNotExistException
@@ -50,10 +54,10 @@ class OXOController
 
     //Returns true if co-ordinate is within bounds, false if not
     private boolean checkBounds(int x, int y) {
-        return (x >= 0 && x < numCols) && (y >= 0 && y < numRows);
+        return (x >= 0 && x < numRows) && (y >= 0 && y < numCols);
     }
 
-    // Win conditions designed for any win threshold for any n x n grid up to 9 x 9
+    // Win conditions designed for any win threshold (<= n) for any n x n grid up to 9 x 9
     public void checkWinConditions() {
         OXOPlayer currPlayer = model.getCurrentPlayer();
         int i, j, lineSum;
@@ -92,12 +96,13 @@ class OXOController
             }
         }
 
-        //Both diagonal directions need to be checked to find a winner
+        // Both diagonal directions need to be checked to find a winner
         if (checkDiagonals(-1) || checkDiagonals(1)) {
             model.setWinner(currPlayer);
             return;
         }
 
+        // Check if game is a draw
         if (turns == numRows*numCols) {
             model.setGameDrawn();
         }
