@@ -13,13 +13,13 @@ class OXOController
         numRows = model.getNumberOfRows();
         numCols = model.getNumberOfColumns();
         winThreshold = model.getWinThreshold();
-
     }
 
     public void handleIncomingCommand(String command) throws InvalidCellIdentifierException, CellAlreadyTakenException, CellDoesNotExistException
     {
         // If the game is over, don't accept any more user input
         if (model.getWinner() != null || model.isGameDrawn()) return;
+        // Grid only goes up to 9x9, so only 2 char input is valid
         if (command.length() == 2) {
             int x = command.toLowerCase().charAt(0) - 'a';
             int y = command.charAt(1) - '0' - 1;
@@ -27,7 +27,7 @@ class OXOController
                 turns++;
                 model.setCellOwner(x, y, model.getCurrentPlayer());
                 checkWinConditions();
-                // Change player after checking win conditions
+                // Change player AFTER checking win conditions
                 model.setCurrentPlayer(model.getPlayerByNumber(turns % model.getNumberOfPlayers()));
             }
         }
@@ -57,6 +57,7 @@ class OXOController
     public void checkWinConditions() {
         OXOPlayer currPlayer = model.getCurrentPlayer();
         int i, j, lineSum;
+
         // Check for win in columns
         for (i = 0; i < numCols; i++) {
             lineSum = 0;
@@ -91,6 +92,7 @@ class OXOController
             }
         }
 
+        //Both diagonal directions need to be checked to find a winner
         if (checkDiagonals(-1) || checkDiagonals(1)) {
             model.setWinner(currPlayer);
             return;
@@ -102,19 +104,21 @@ class OXOController
 
     }
 
-    //Multiplier ( -1 or 1) determines which direction to check: -1 = i increasing, j decreasing
-    //                                                            1 = i increasing, j increasing
+    //Multiplier can be either -1 or 1 and determines which direction to check:
+    // -1 = i increasing, j decreasing
+    //  1 = i increasing, j increasing
     public boolean checkDiagonals(int multiplier) {
-        int lineSum = 1;
+        OXOPlayer currPlayer = model.getCurrentPlayer();
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
-                if (model.getCellOwner(i, j) == model.getCurrentPlayer()) {
-                    lineSum = 0;
+                if (model.getCellOwner(i, j) == currPlayer) {
+                    int lineSum = 1;
                     boolean checked = false;
                     while (!checked) {
+                        // If the cell to the bottom right or bottom left is a valid cell
                         if (checkBounds(i + lineSum, j + (lineSum * multiplier))) {
                             if (model.getCellOwner(i + lineSum,
-                                    j + (lineSum * multiplier)) == model.getCurrentPlayer()) {
+                                    j + (lineSum * multiplier)) == currPlayer) {
                                 lineSum++;
                             }
                             else {
