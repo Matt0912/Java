@@ -6,8 +6,7 @@ class OXOController
     private int numCols;
     private int winThreshold;
 
-    public OXOController(OXOModel model)
-    {
+    public OXOController(OXOModel model) {
         this.model = model;
         model.setCurrentPlayer(model.getPlayerByNumber(0));
         numRows = model.getNumberOfRows();
@@ -19,8 +18,7 @@ class OXOController
         }
     }
 
-    public void handleIncomingCommand(String command) throws InvalidCellIdentifierException, CellAlreadyTakenException, CellDoesNotExistException
-    {
+    public void handleIncomingCommand(String command) throws InvalidCellIdentifierException, CellAlreadyTakenException, CellDoesNotExistException {
         // If the game is over, don't accept any more user input
         if (model.getWinner() != null || model.isGameDrawn()) return;
         // Grid only goes up to 9x9, so only 2 char input is valid
@@ -60,43 +58,15 @@ class OXOController
     // Win conditions designed for any win threshold (<= n) for any n x n grid up to 9 x 9
     public void checkWinConditions() {
         OXOPlayer currPlayer = model.getCurrentPlayer();
-        int i, j, lineSum;
 
-        // Check for win in columns
-        for (i = 0; i < numCols; i++) {
-            lineSum = 0;
-            for (j = 0; j < numRows; j++) {
-                if (model.getCellOwner(j, i) == currPlayer) {
-                    lineSum++;
-                }
-                else {
-                    lineSum = 0;
-                }
-                if (lineSum == winThreshold) {
-                    model.setWinner(currPlayer);
-                    return;
-                }
-            }
+        // Check for win in columns and rows - checkCols/checkRows changed to 1/0 and 0/1
+        if (checkLines(numCols, numRows, 1, 0) ||
+                checkLines(numRows, numCols, 0, 1)) {
+            model.setWinner(currPlayer);
+            return;
         }
 
-        // Check for win in rows
-        for (i = 0; i < numRows; i++) {
-            lineSum = 0;
-            for (j = 0; j < numCols; j++) {
-                if (model.getCellOwner(i, j) == currPlayer) {
-                    lineSum++;
-                }
-                else {
-                    lineSum = 0;
-                }
-                if (lineSum == winThreshold) {
-                    model.setWinner(currPlayer);
-                    return;
-                }
-            }
-        }
-
-        // Both diagonal directions need to be checked to find a winner
+        // Both diagonal directions need to be checked to find a winner - multiplier can be -1/1
         if (checkDiagonals(-1) || checkDiagonals(1)) {
             model.setWinner(currPlayer);
             return;
@@ -107,6 +77,28 @@ class OXOController
             model.setGameDrawn();
         }
 
+    }
+
+    // If checking columns, needs to be getCellOwner(j,i) checkCols = 1, checkRows = 0
+    // If checking rows, needs to be getCellOwner(i,j) - checkCols = 0, checkRows = 1
+    public boolean checkLines(int firstDirection, int secondDirection, int checkCols, int checkRows) {
+        OXOPlayer currPlayer = model.getCurrentPlayer();
+        for (int i = 0; i < firstDirection; i++) {
+            int lineSum = 0;
+            for (int j = 0; j < secondDirection; j++) {
+                if (model.getCellOwner(j*checkCols + i*checkRows,
+                        i*checkCols + j*checkRows) == currPlayer) {
+                    lineSum++;
+                }
+                else {
+                    lineSum = 0;
+                }
+                if (lineSum == winThreshold) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     //Multiplier can be either -1 or 1 and determines which direction to check:
