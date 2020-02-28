@@ -11,7 +11,7 @@
     <option name="myElementSize" value="193" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="NamedScopeManager">
     <scope name="Class" pattern="src:Game||src:Window" />
@@ -26,7 +26,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -87,22 +87,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="521" y="223" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1580659229975" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1581120199855">
+    <state x="661" y="173" key="FileChooserDialogImpl" timestamp="1582906410219">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="661" y="173" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1582906410219" />
+    <state width="1876" height="285" key="GridCell.Tab.0.bottom" timestamp="1582906414486">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581120199855" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1581120199855">
+    <state width="1876" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1582906414486" />
+    <state width="1876" height="285" key="GridCell.Tab.0.center" timestamp="1582906414486">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581120199855" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1581120199855">
+    <state width="1876" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1582906414486" />
+    <state width="1876" height="285" key="GridCell.Tab.0.left" timestamp="1582906414485">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581120199855" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1581120199855">
+    <state width="1876" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1582906414485" />
+    <state width="1876" height="285" key="GridCell.Tab.0.right" timestamp="1582906414486">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581120199855" />
+    <state width="1876" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1582906414486" />
     <state width="1876" height="352" key="GridCell.Tab.1.bottom" timestamp="1581120199793">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -127,10 +135,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="578" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1581261192212" />
-    <state x="264" y="156" key="new project wizard" timestamp="1580656885711">
+    <state x="264" y="156" key="new project wizard" timestamp="1582906412081">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="264" y="156" key="new project wizard/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1580656885711" />
+    <state x="264" y="156" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1582906412081" />
     <state x="570" y="382" width="707" height="305" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1580658635542">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -13,8 +13,8 @@ public class Spawn {
     }
 
     public void tick() {
-        if (hud.getScore() % 200 == 0) {
-            hud.setLevel(hud.getLevel() + 1);
+        if (hud.getScore() % 200 == 0)
+            hud.setLevel(hud.getLevel() + 1);{
             handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 60),r.nextInt(Game.HEIGHT/2), ID.BasicEnemy, handler));
 
             if (hud.getLevel() == 3) {
