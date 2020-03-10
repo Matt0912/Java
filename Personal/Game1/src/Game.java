@@ -45,7 +45,6 @@ public class Game extends Canvas implements Runnable {
                 handler.addObject(new MenuEffect(r.nextInt(WIDTH - 60), r.nextInt(HEIGHT/2), ID.MenuEffect, handler));
             }
         }
-
     }
 
     public synchronized void start() {

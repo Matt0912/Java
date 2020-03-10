@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="499b8512-be8e-4387-aaed-5f93a1e5a95f" name="Default Changelist" comment="" />
+    <list default="true" id="499b8512-be8e-4387-aaed-5f93a1e5a95f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Personal/Game1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Personal/Game1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Personal/Game1/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Personal/Game1/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -34,8 +37,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/data" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Personal/Game1" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -52,6 +55,7 @@
     <configuration name="StagServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StagServer" />
       <module name="04-Stag" />
+      <option name="PROGRAM_PARAMETERS" value="data/entities.dot data/actions.json" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/data" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,21 +90,57 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="72" y="184" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1581430776934" />
-    <state x="472" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582909622702">
+    <state x="513" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583062943433">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="472" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1582909622702" />
+    <state x="513" y="231" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1583062943433" />
     <state x="328" y="415" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581428066443">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="328" y="415" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1581428066443" />
-    <state x="279" y="280" key="FileChooserDialogImpl" timestamp="1582909312557">
+    <state x="279" y="280" key="FileChooserDialogImpl" timestamp="1583072542366">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="279" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1582909312557" />
-    <state x="354" y="158" key="SettingsEditor" timestamp="1582908885212">
+    <state x="279" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1583072542366" />
+    <state width="915" height="355" key="GridCell.Tab.0.bottom" timestamp="1583513235699">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="354" y="158" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1582908885212" />
+    <state width="915" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235699" />
+    <state width="915" height="355" key="GridCell.Tab.0.center" timestamp="1583513235699">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235699" />
+    <state width="915" height="355" key="GridCell.Tab.0.left" timestamp="1583513235699">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235699" />
+    <state width="915" height="355" key="GridCell.Tab.0.right" timestamp="1583513235699">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235699" />
+    <state width="915" height="355" key="GridCell.Tab.1.bottom" timestamp="1583513235700">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235700" />
+    <state width="915" height="355" key="GridCell.Tab.1.center" timestamp="1583513235700">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235700" />
+    <state width="915" height="355" key="GridCell.Tab.1.left" timestamp="1583513235700">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235700" />
+    <state width="915" height="355" key="GridCell.Tab.1.right" timestamp="1583513235700">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="915" height="355" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583513235700" />
+    <state x="354" y="158" key="SettingsEditor" timestamp="1583061374549">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="354" y="158" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1583061374549" />
+    <state x="342" y="146" key="new project wizard" timestamp="1583058070710">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="342" y="146" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1583058070710" />
   </component>
 </project>
