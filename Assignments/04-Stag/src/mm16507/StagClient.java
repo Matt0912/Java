@@ -1,20 +1,22 @@
+package mm16507;
+
 import java.io.*;
 import java.net.*;
 
-public class StagClient
-{
-    public static void main(String args[])
-    {
+public class StagClient {
+
+    public static void main(String args[]) {
         if(args.length != 1) System.out.println("Usage: java StageClient <player-name>");
         else {
             String playerName = args[0];
             BufferedReader commandLine = new BufferedReader(new InputStreamReader(System.in));
-            while(true) handleNextCommand(commandLine, playerName);
+            while(true) {
+                handleNextCommand(commandLine, playerName);
+            }
         }
     }
 
-    private static void handleNextCommand(BufferedReader commandLine, String playerName)
-    {
+    private static void handleNextCommand(BufferedReader commandLine, String playerName) {
         try {
             String incoming;
             System.out.print("\n" + playerName + ": ");
